@@ -15,11 +15,11 @@
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
-    <bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean"/>
+    <bean id="schedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean"/>
 
     <context:property-placeholder location="classpath:db.properties"/>
 
-    <bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource" p:driver="${driver}"
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" p:driver="${driver}"
     p:url="${url}" p:username="${username}" p:password="{password}" p:initialSize="5"
     p:maxActive="50" p:minIdle="1" p:maxWait="60000">
     </bean>

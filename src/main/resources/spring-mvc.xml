@@ -16,6 +16,8 @@
     </context:component-scan>
     <mvc:annotation-driven/>
 
+    <mvc:default-servlet-handler/>
+
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/WEB-INF/"
           p:suffix=".jsp"/>
 

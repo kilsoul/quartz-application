@@ -3,13 +3,13 @@
        xmlns:task="http://www.springframework.org/schema/task"
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/task
-       http://www.springframework.org/schema/task/spring-task.xsd">
+       http://www.springframework.org/schema/task/spring-task.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <context:component-scan base-package="com.fightermap.quartz">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
@@ -19,9 +19,10 @@
 
     <context:property-placeholder location="classpath:db.properties"/>
 
-    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" p:driver="${driver}"
-    p:url="${url}" p:username="${username}" p:password="{password}" p:initialSize="5"
-    p:maxActive="50" p:minIdle="1" p:maxWait="60000">
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close"
+          p:driver="${driver}"
+          p:url="${url}" p:username="${username}" p:password="{password}" p:initialSize="5"
+          p:maxActive="50" p:minIdle="1" p:maxWait="60000">
     </bean>
 
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" p:dataSource-ref="dataSource"/>

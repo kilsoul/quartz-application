@@ -17,7 +17,7 @@ import java.util.List;
  */
 @Service
 public class ScheduleJobService {
-    @Resource
+    @Autowired
     private ScheduleJobDao scheduleJobDao;
 
     @Autowired

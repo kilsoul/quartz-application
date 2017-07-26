@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - quartz@localhost" uuid="c6561992-4445-4d8b-a5bf-cb5783ad8696">
+    <database-info product="MySQL" version="5.7.17" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.41 ( Revision: 83c6dc41b96809df81444362933043b20a1d49d5 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="quartz">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="information_schema"/>
+      <schema id="3" name="mydb"/>
+      <schema id="4" name="mysql"/>
+      <schema id="5" name="performance_schema"/>
+      <schema id="6" name="sampdb"/>
+      <schema id="7" name="sys"/>
+      <schema id="8" name="test1"/>
+      <table id="9" parent="1" name="task_schedule_job"/>
+      <column id="10" parent="9" name="job_id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="11" parent="9" name="create_time">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="12" parent="9" name="update_time">
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <column id="13" parent="9" name="job_name">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="14" parent="9" name="job_group">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="15" parent="9" name="job_status">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="16" parent="9" name="cron_expression">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="17" parent="9" name="description">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="18" parent="9" name="bean_class">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="19" parent="9" name="is_concurrent">
+        <comment>1</comment>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="20" parent="9" name="spring_id">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="21" parent="9" name="method_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <index id="22" parent="9" name="name_group">
+        <columns>job_name
+job_group</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="23" parent="9" name="PRIMARY">
+        <columns>job_id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="24" parent="9" name="name_group">
+        <columns>job_name
+job_group</columns>
+        <underlying-index>name_group</underlying-index>
+      </key>
+    </database-model>
+  </data-source>
+</component>

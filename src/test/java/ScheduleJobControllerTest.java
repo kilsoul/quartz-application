@@ -38,7 +38,7 @@ public class ScheduleJobControllerTest{
 
     @Test
     public void testGetAllTask() throws Exception{
-        mockMvc.perform(MockMvcRequestBuilders.get("/task/getAllTask").accept(MediaType.APPLICATION_JSON_UTF8))
+        mockMvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
 }

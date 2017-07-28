@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by zengqk on 2017/7/25.
  */
-@WebAppConfiguration
+@WebAppConfiguration("src/main/webapp")
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:*.xml"})
 public class ScheduleJobControllerTest{
@@ -38,7 +38,7 @@ public class ScheduleJobControllerTest{
 
     @Test
     public void testGetAllTask() throws Exception{
-        mockMvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON_UTF8))
+        mockMvc.perform(MockMvcRequestBuilders.get("/task/getAllTask").accept(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
 }
